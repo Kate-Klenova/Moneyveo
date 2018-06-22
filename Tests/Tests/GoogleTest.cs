@@ -12,6 +12,7 @@ namespace Tests.Tests
     {
         private IWebDriver _driver;
         private string desiredInfo = "Selenium IDE export to C#";
+        private string expectedInfo = "Selenium IDE";
 
         [SetUp]
         public void SetUp()
@@ -25,13 +26,13 @@ namespace Tests.Tests
         {
             var googlePage = new GooglePage(_driver);
             googlePage.GoogleForInfo(desiredInfo);
-            Assert.True(googlePage.FindRequiredtLink(3).Contains("Selenium IDE"));
+            Assert.True(googlePage.FindRequiredtLink(3).Contains(expectedInfo));
         }
 
         [TearDown]
         public void EndTest()
         {
-            _driver.Close();
+            _driver.Quit();
         }
     }
 }
