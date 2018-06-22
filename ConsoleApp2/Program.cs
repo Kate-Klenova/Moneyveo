@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TestTask
 {
-    class Moneyveo
+    class Program
     {
         static void Main(string[] args)
         {
